@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+}
+
+button,
+input {
+  all: unset;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  background: #1c181d;
+  height: 3.5rem;
+  position: relative;
+}
+
+.header {
+  background: #1c181d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  width: calc(100vw - 17px);
+  margin: 0 auto;
+  height: 3.5rem;
+  gap: 5px;
+}
+
+.desktop-logo,
+.hide {
+  display: none;
+}
+
+.search-input {
+  padding: 8px;
+  background: #303030;
+  border-radius: 8px;
+  border: 1px solid #616161;
+  height: 2rem;
+  width: 65%;
+}
+
+.search-input input {
+  width: 80%;
+  margin: 0 0 0 5px;
+  color: white;
+}
+
+.search-input input::placeholder {
+  color: #b5b5b5;
+  font-weight: 500;
+}
+
+.end {
+  gap: 5px;
+}
+
+.end .bell {
+  margin: 0 10px;
+}
+
+button.user {
+  border-radius: 8px;
+  background: #303030;
+  color: #00000066;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+button.user .profile-img {
+  border-radius: 8px;
+  background: #36fba1;
+  padding: 8px 7px;
+}
+
+main {
+  padding-top: 25px;
+  background: #f1f1f1;
+  /* width: 100vw; */
+}
+
+.announcement {
+  background: #1a1a1a;
+  font-weight: 500px;
+  color: #e3e3e3;
+  padding: 12px 8px 12px 16px;
+  align-items: flex-start;
+}
+
+.announcement p {
+  gap: 16px;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.announcement p button {
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0px -1px 0px 0px #b5b5b5 inset;
+  font-weight: 600;
+  color: #323232;
+  padding: 6px 12px;
+}
+
+.announcement button {
+  padding: 8px 0;
+}
+
+.guide {
+  background: #ffffff;
+  padding: 16px 8px 8px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+  margin-top: 25px;
+  color: #303030;
+}
+
+.guide h5 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.guide .text {
+  align-items: flex-start;
+  margin: 0 0 20px;
+}
+
+.guide .text div > p {
+  margin-bottom: 10px;
+}
+
+.progress {
+  gap: 8px;
+}
+
+progress {
+  border-radius: 7px;
+  width: 72px;
+  height: 4px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #e3e3e3;
+  border-radius: 7px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #1a1a1a;
+  border-radius: 7px;
+}
+
+.sub-section {
+  border-radius: 10px;
+  background: #f3f3f3;
+  padding: 8px 8px 12px 8px;
+}
+
+.desc {
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.desc-texts {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.desc-texts summary {
+  font-weight: 600;
+}
+
+.desc-texts p {
+  font-weight: 500;
+  line-height: 18.2px;
+}
+
+.desc-texts p a {
+  color: #005bd3;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.desc-texts .btn1 {
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #f6f3f6;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: #404040;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+    0px 2px 0px 0px #000;
+}
+
+@media screen and (min-width: 991px) {
+  .header {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .header .mobile-logo {
+    display: none;
+  }
+
+  .desktop-logo, .desc-img {
+    display: block;
+  }
+
+  .search-input {
+    width: 30%;
+  }
+
+  input {
+    flex: 1 0 0;
+  }
+
+  .end .bell {
+    background: #303030;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .user {
+    gap: 8px;
+  }
+
+  .user .name {
+    color: #e3e3e3;
+    background: #303030;
+    display: block;
+    padding: 8px 5px 8px 8px;
+  }
+
+  .main {
+    max-width: 49.75rem;
+    margin: 0 auto;
+  }
+
+  .announcement {
+    gap: 10px;
+    justify-content: space-between;
+    border-radius: 8px;
+    align-items: center;
+  }
+
+  .announcement p {
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .guide {
+    border-radius: 18px;
+  }
+
+  .text {
+    justify-content: space-between;
+  }
+}
