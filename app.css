@@ -337,6 +337,10 @@ progress::-webkit-progress-value {
   padding: 8px 8px 12px 8px;
 }
 
+.no-show-sub {
+  background-color: #ffffff;
+}
+
 .desc {
   align-items: flex-start;
   gap: 8px;
@@ -348,7 +352,26 @@ progress::-webkit-progress-value {
   gap: 16px;
 }
 
-.desc-texts summary {
+.no-show-desc {
+  align-items: center;
+}
+
+.no-show {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.no-show * {
+  display: none;
+}
+
+.no-show .summary {
+  display: block;
+  font-weight: 500;
+}
+
+.desc-texts .summary {
   font-weight: 600;
 }
 
@@ -480,3 +503,18 @@ progress::-webkit-progress-value {
     justify-content: space-between;
   }
 }
+
+/* cubic-bezier(0.25,0.1,0.25,1) */
+/* animation: FC3hC .5s var(--p-motion-ease) 1 forwards;
+    height: 0;
+    opacity: 0;
+    transform: rotate(-120deg);
+    width: 0;
+} */
+
+/*fc3hc 100% {
+    height: 1.5rem;
+    opacity: 1;
+    transform: rotate(0deg);
+    width: 1.5rem;
+} */
