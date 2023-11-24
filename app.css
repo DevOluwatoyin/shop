@@ -337,13 +337,36 @@ progress::-webkit-progress-value {
   padding: 8px 8px 12px 8px;
 }
 
+.desc {
+  align-items: flex-start;
+  gap: 8px;
+}
+
 .no-show-sub {
   background-color: #ffffff;
 }
 
-.desc {
-  align-items: flex-start;
-  gap: 8px;
+.desc > button:hover > svg circle {
+  stroke-dasharray: 0;
+}
+
+.desc > button:active > svg circle {
+  fill: #d9d9d9;
+}
+
+.desc > button:active > svg {
+  display: none;
+}
+
+.desc > button:active > .rotate {
+  display: block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
 .desc-texts {
@@ -511,6 +534,10 @@ progress::-webkit-progress-value {
     transform: rotate(-120deg);
     width: 0;
 } */
+
+/* 1s linear infinite */
+/* 100% {
+    transform: rotate(1turn);} */
 
 /*fc3hc 100% {
     height: 1.5rem;
