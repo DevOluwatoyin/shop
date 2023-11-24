@@ -28,7 +28,7 @@
           />
         </a>
 
-        <div class="search-input flex">
+        <button class="search-input flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -44,7 +44,7 @@
             />
           </svg>
           <input type="search" name="search" id="search" placeholder="Search" />
-        </div>
+        </button>
 
         <div class="end flex">
           <button class="bell">
@@ -63,7 +63,7 @@
               />
             </svg>
           </button>
-          <div class="notify absolute">
+          <div class="notify absolute hide">
             <div class="flex">
               <h4>Alerts</h4>
               <div class="flex">
@@ -116,45 +116,61 @@
             <span class="name hide">Davii Collections</span>
             <span class="profile-img">DC</span>
           </button>
-          <div class="dropdown flex hide">
-            <div class="user-details">
-              <span class="profile-img">DC</span>
-              <span class="username">Davii Collections</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-              >
-                <path
-                  d="M13.3332 4L5.99984 11.3333L2.6665 8"
-                  stroke="#303030"
-                  stroke-width="1.33333"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
+          <div class="dropdown absolute">
             <menu>
-              <li>
-                <img
-                  src="https://crushingit.tech/hackathon-assets/icon-store.svg"
-                  alt="store"
-                />
-                <span>All stores</span>
+              <li class="top-menu">
+                <ul>
+                  <li class="user-details flex">
+                    <span class="profile-img">DC</span>
+                    <span class="username">Davii Collections</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.3332 4L5.99984 11.3333L2.6665 8"
+                        stroke="#303030"
+                        stroke-width="1.33333"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </li>
+                  <li>
+                    <a href="/" class="flex gap-8">
+                      <img
+                        src="https://crushingit.tech/hackathon-assets/icon-store.svg"
+                        alt="store"
+                      />
+                      <span>All stores</span>
+                    </a>
+                  </li>
+                </ul>
               </li>
-              <li>Help Center</li>
-              <li>Changelog</li>
-              <li>Community forums</li>
-              <li>Hire a Shopify Partner</li>
-              <li>Keyboard shortcuts</li>
-              <li>
-                <span>David Micheal</span>
-                <span>davidmicheal@gmail.com</span>
+              <li class="line">
+                <ul>
+                  <li>
+                    <a href="/">Help Center</a>
+                  </li>
+                  <li><a href="/">Changelog</a></li>
+                  <li><a href="/">Community forums</a></li>
+                  <li><a href="/">Hire a Shopify Partner</a></li>
+                  <li><a href="/">Keyboard shortcuts</a></li>
+                </ul>
               </li>
-              <li>Manage account</li>
-              <li>Log out</li>
+              <li class="bottom-menu">
+                <ul>
+                  <li class="flex mail">
+                    <span class="name">David Micheal</span>
+                    <span class="address">davidmicheal@gmail.com</span>
+                  </li>
+                  <li><a href="/">Manage account</a></li>
+                  <li><a href="/">Log out</a></li>
+                </ul>
+              </li>
             </menu>
           </div>
         </div>
