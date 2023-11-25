@@ -35,6 +35,11 @@ a {
   position: absolute;
 }
 
+.container {
+  height: 100vh;
+  background: #f1f1f1;
+}
+
 header {
   background: #1c181d;
   height: 4rem;
@@ -244,7 +249,6 @@ li.mail .address {
 
 main {
   padding-top: 25px;
-  background: #f1f1f1;
 }
 
 .announcement {
@@ -331,10 +335,23 @@ progress::-webkit-progress-value {
   border-radius: 7px;
 }
 
+.sub-section-wrapper {
+  padding: 2px 0;
+  cursor: pointer;
+}
+
 .sub-section {
   border-radius: 10px;
   background: #f3f3f3;
   padding: 8px 8px 12px 8px;
+}
+
+.sub-section:hover {
+  background-color: #f3f3f3;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .desc {
@@ -342,7 +359,7 @@ progress::-webkit-progress-value {
   gap: 8px;
 }
 
-.no-show-sub {
+.hidden {
   background-color: #ffffff;
 }
 
@@ -375,23 +392,23 @@ progress::-webkit-progress-value {
   gap: 16px;
 }
 
-.no-show-desc {
+.hidden .desc {
   align-items: center;
 }
 
-.no-show {
+.hidden .desc-texts {
   display: flex;
   align-items: center;
   gap: 0;
 }
 
-.no-show * {
+.hidden .desc-texts * {
   display: none;
 }
 
-.no-show .summary {
+.hidden .summary {
   display: block;
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 .desc-texts .summary {
@@ -524,6 +541,10 @@ progress::-webkit-progress-value {
 
   .text {
     justify-content: space-between;
+  }
+
+  .hidden .desc-img {
+    display: none;
   }
 }
 
