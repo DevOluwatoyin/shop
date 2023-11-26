@@ -262,6 +262,7 @@
               </svg>
             </button>
           </div>
+
           <section class="guide">
             <div class="text flex">
               <div>
@@ -309,12 +310,17 @@
                 </svg>
               </button>
             </div>
-            <section id="steps">
-              <section class="sub-section-wrapper">
-                <div class="sub-section flex hidden">
+
+            <ul
+              aria-label="Personalized guide to get your store up and running"
+              id="accordion-wrapper"
+            >
+              <li class="sub-section-wrapper">
+                <div class="sub-section flex accordion-item">
                   <div class="desc flex w-full">
-                    <button>
+                    <button class="checkbox">
                       <svg
+                        class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -333,7 +339,7 @@
                         />
                       </svg>
                       <svg
-                        class="hide rotate"
+                        class="hide loader"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -348,12 +354,31 @@
                           stroke-linejoin="round"
                         />
                       </svg>
+                      <svg
+                        class="hide checked"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                        <path
+                          d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
                     </button>
                     <div class="desc-texts flex w-full">
-                      <button class="summary w-full">
+                      <button
+                        aria-controls="content-1"
+                        aria-expanded="true"
+                        id="accordion-control-1"
+                        class="summary w-full accordion-control"
+                      >
                         Customize your online store
                       </button>
-                      <p>
+                      <p aria-hidden="false" id="content-1">
                         Choose a theme and add your logo, colors, and images to
                         reflect your brand. <a href="/">Learn more</a>
                       </p>
@@ -367,13 +392,14 @@
                     />
                   </div>
                 </div>
-              </section>
+              </li>
 
-              <section class="sub-section-wrapper">
-                <div class="sub-section flex hidden">
-                  <div class="desc flex">
-                    <button>
+              <li class="sub-section-wrapper">
+                <div class="sub-section flex accordion-item hidden">
+                  <div class="desc flex w-full">
+                    <button class="checkbox">
                       <svg
+                        class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -392,7 +418,7 @@
                         />
                       </svg>
                       <svg
-                        class="hide rotate"
+                        class="hide loader"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -407,10 +433,31 @@
                           stroke-linejoin="round"
                         />
                       </svg>
+                      <svg
+                        class="hide checked"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                        <path
+                          d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
                     </button>
-                    <div class="desc-texts flex">
-                      <button class="summary">Add your first product</button>
-                      <p>
+                    <div class="desc-texts flex w-full">
+                      <button
+                        aria-controls="content-2"
+                        aria-expanded="false"
+                        id="accordion-control-2"
+                        class="summary w-full accordion-control"
+                      >
+                        Add your first product
+                      </button>
+                      <p aria-hidden="true" id="content-2">
                         Write a description, add photos, and set pricing for the
                         products you plan to sell. <a href="/">Learn more</a>
                       </p>
@@ -427,13 +474,14 @@
                     />
                   </div>
                 </div>
-              </section>
+              </li>
 
-              <section class="sub-section-wrapper">
-                <div class="sub-section flex hidden">
-                  <div class="desc flex">
-                    <button>
+              <li class="sub-section-wrapper">
+                <div class="sub-section flex accordion-item hidden">
+                  <div class="desc flex w-full">
+                    <button class="checkbox">
                       <svg
+                        class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -452,7 +500,7 @@
                         />
                       </svg>
                       <svg
-                        class="hide rotate"
+                        class="hide loader"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -467,10 +515,31 @@
                           stroke-linejoin="round"
                         />
                       </svg>
+                      <svg
+                        class="hide checked"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                        <path
+                          d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
                     </button>
-                    <div class="desc-texts flex">
-                      <button class="summary">Add a custom domain</button>
-                      <p>
+                    <div class="desc-texts flex w-full">
+                      <button
+                        aria-controls="content-3"
+                        aria-expanded="false"
+                        id="accordion-control-3"
+                        class="summary w-full accordion-control"
+                      >
+                        Add a custom domain
+                      </button>
+                      <p aria-hidden="true" id="content-3">
                         Your current domain is 222219.myshopify.com but you can
                         add a custom domain to help customers find your online
                         store.
@@ -487,13 +556,14 @@
                     />
                   </div>
                 </div>
-              </section>
+              </li>
 
-              <section class="sub-section-wrapper">
-                <div class="sub-section flex hidden">
-                  <div class="desc flex">
-                    <button>
+              <li class="sub-section-wrapper">
+                <div class="sub-section flex accordion-item hidden">
+                  <div class="desc flex w-full">
+                    <button class="checkbox">
                       <svg
+                        class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -512,7 +582,7 @@
                         />
                       </svg>
                       <svg
-                        class="hide rotate"
+                        class="hide loader"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -527,10 +597,31 @@
                           stroke-linejoin="round"
                         />
                       </svg>
+                      <svg
+                        class="hide checked"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                        <path
+                          d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
                     </button>
-                    <div class="desc-texts flex">
-                      <button class="summary">Name your store</button>
-                      <p>
+                    <div class="desc-texts flex w-full">
+                      <button
+                        aria-controls="content-4"
+                        aria-expanded="false"
+                        id="accordion-control-4"
+                        class="summary w-full accordion-control"
+                      >
+                        Name your store
+                      </button>
+                      <p aria-hidden="true" id="content-4">
                         Your temporary store name is currently Davii
                         collections. The store name appears in your admin and
                         your online store.
@@ -546,13 +637,14 @@
                     />
                   </div>
                 </div>
-              </section>
+              </li>
 
-              <section class="sub-section-wrapper">
-                <div class="sub-section flex hidden">
-                  <div class="desc flex">
-                    <button>
+              <li class="sub-section-wrapper">
+                <div class="sub-section flex accordion-item hidden">
+                  <div class="desc flex w-full">
+                    <button class="checkbox">
                       <svg
+                        class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -571,7 +663,7 @@
                         />
                       </svg>
                       <svg
-                        class="hide rotate"
+                        class="hide loader"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
@@ -586,10 +678,31 @@
                           stroke-linejoin="round"
                         />
                       </svg>
+                      <svg
+                        class="hide checked"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="12" cy="12" r="10" fill="#303030"></circle>
+                        <path
+                          d="M17.2738 8.52629C17.6643 8.91682 17.6643 9.54998 17.2738 9.94051L11.4405 15.7738C11.05 16.1644 10.4168 16.1644 10.0263 15.7738L7.3596 13.1072C6.96908 12.7166 6.96908 12.0835 7.3596 11.693C7.75013 11.3024 8.38329 11.3024 8.77382 11.693L10.7334 13.6525L15.8596 8.52629C16.2501 8.13577 16.8833 8.13577 17.2738 8.52629Z"
+                          fill="#fff"
+                        ></path>
+                      </svg>
                     </button>
-                    <div class="desc-texts flex">
-                      <button class="summary">Set up a payment provider</button>
-                      <p>
+                    <div class="desc-texts flex w-full">
+                      <button
+                        aria-controls="content-5"
+                        aria-expanded="false"
+                        id="accordion-control-5"
+                        class="summary w-full accordion-control"
+                      >
+                        Set up a payment provider
+                      </button>
+                      <p aria-hidden="true" id="content-5">
                         Choose a payment provider to start accepting payments.
                         You&apos;ll need to create an account with the payment
                         provider and set it up with your Shopify store.
@@ -605,8 +718,8 @@
                     />
                   </div>
                 </div>
-              </section>
-            </section>
+              </li>
+            </ul>
           </section>
         </div>
       </main>

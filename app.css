@@ -22,6 +22,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -191,7 +195,6 @@ button.user,
 }
 
 menu li {
-  list-style: none;
   margin-top: 6px;
 }
 
@@ -371,12 +374,9 @@ progress::-webkit-progress-value {
   fill: #d9d9d9;
 }
 
-.desc > button:active > svg {
-  display: none;
-}
 
-.desc > button:active > .rotate {
-  display: block;
+
+.desc > button .loader {
   animation: spin 1s linear infinite;
 }
 

@@ -2,14 +2,15 @@ const notification = document.querySelector("#bell");
 const alert = document.querySelector("#notify");
 const menuButton = document.querySelector("#user");
 const menuDropdown = document.querySelector("#menu-dropdown");
-const setupControl = document.querySelector("#toggle-guides");
-const setupSteps = document.querySelector("#steps");
-const foldSetupSteps = document.querySelector("#close-steps");
-const openSetupSteps = document.querySelector("#open-steps");
 const trialCallout = document.querySelector("#trial-callout");
 const dismissBtn = document.querySelector("#dismiss");
+const setupControl = document.querySelector("#toggle-guides");
+const setupSteps = document.querySelector("#accordion-wrapper");
+const foldSetupSteps = document.querySelector("#close-steps");
+const openSetupSteps = document.querySelector("#open-steps");
+const allSteps = document.querySelectorAll(".accordion-item");
 
-function openAlert() {
+function OpenAlert() {
   alert.classList.toggle("hide");
   const isExpanded = notification.getAttribute("aria-expanded") === "true";
   const alertFocus = alert.querySelector("#mark-read");
@@ -21,7 +22,7 @@ function openAlert() {
   alertFocus.focus();
 }
 
-function openMenu() {
+function OpenMenu() {
   menuDropdown.classList.toggle("hide");
   const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
 
@@ -34,21 +35,85 @@ function openMenu() {
     : menuButton.setAttribute("aria-expanded", "true");
 }
 
-function openSetupGuide() {
+function DismissTrialCallout() {
+  trialCallout.classList.add("hide");
+}
+
+function OpenSetupGuide() {
   openSetupSteps.classList.toggle("hide");
   setupSteps.classList.toggle("hide");
   foldSetupSteps.classList.toggle("hide");
 }
 
-function dismissTrialCallout() {
-  trialCallout.classList.add("hide");
+function OpenAndCloseSetupStep() {
+  allSteps.forEach((item, index) => {
+    const control = item.querySelector(".accordion-control");
+    const content = item.querySelector(".desc-texts");
+    const checkbox = item.querySelector(".checkbox");
+
+    if (index === 0) {
+      item.classList.remove("hidden");
+      content.setAttribute("aria-hidden", "false");
+    }
+
+    checkbox.addEventListener("click", function () {
+      checkbox.classList.contains("marked-as-done")
+        ? UncheckSteps(checkbox)
+        : CheckSteps(checkbox);
+    });
+
+    control.addEventListener("click", function () {
+      const isOpen = item.classList.contains("hidden");
+
+      allSteps.forEach((otherItem) => {
+        otherItem.classList.add("hidden");
+        otherItem
+          .querySelector(".desc-texts")
+          .setAttribute("aria-hidden", "true");
+      });
+
+      if (isOpen) {
+        item.classList.remove("hidden");
+        content.setAttribute("aria-hidden", "false");
+      }
+    });
+  });
+}
+
+function CheckSteps(checkbox) {
+  const uncheckedIcon = checkbox.querySelector(".unchecked");
+  const loadingIcon = checkbox.querySelector(".loader");
+  const checkedIcon = checkbox.querySelector(".checked");
+  loadingIcon.classList.remove("hide");
+  uncheckedIcon.classList.add("hide");
+
+  setTimeout(() => {
+    loadingIcon.classList.add("hide");
+    checkedIcon.classList.remove("hide");
+    checkbox.classList.add("marked-as-done");
+  }, 2000);
+}
+
+function UncheckSteps(checkbox) {
+  const uncheckedIcon = checkbox.querySelector(".unchecked");
+  const loadingIcon = checkbox.querySelector(".loader");
+  const checkedIcon = checkbox.querySelector(".checked");
+  checkedIcon.classList.add("hide");
+  loadingIcon.classList.remove("hide");
+
+  setTimeout(() => {
+    loadingIcon.classList.add("hide");
+    uncheckedIcon.classList.remove("hide");
+    checkbox.classList.remove("marked-as-done");
+  }, 2000);
 }
 
 function togglePopup() {
-  notification.addEventListener("click", openAlert);
-  menuButton.addEventListener("click", openMenu);
-  dismissBtn.addEventListener("click", dismissTrialCallout);
-  setupControl.addEventListener("click", openSetupGuide);
+  notification.addEventListener("click", OpenAlert);
+  menuButton.addEventListener("click", OpenMenu);
+  dismissBtn.addEventListener("click", DismissTrialCallout);
+  setupControl.addEventListener("click", OpenSetupGuide);
 }
 
 togglePopup();
+OpenAndCloseSetupStep();
