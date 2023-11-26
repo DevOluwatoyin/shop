@@ -84,6 +84,9 @@ function CheckSteps(checkbox) {
   const uncheckedIcon = checkbox.querySelector(".unchecked");
   const loadingIcon = checkbox.querySelector(".loader");
   const checkedIcon = checkbox.querySelector(".checked");
+  const progress = document.getElementById("progress");
+  const progressStatus = document.getElementById("progress-status");
+
   loadingIcon.classList.remove("hide");
   uncheckedIcon.classList.add("hide");
 
@@ -91,6 +94,14 @@ function CheckSteps(checkbox) {
     loadingIcon.classList.add("hide");
     checkedIcon.classList.remove("hide");
     checkbox.classList.add("marked-as-done");
+
+    const currentValue = parseInt(progress.value);
+    const maxValue = parseInt(progress.max);
+
+    if (currentValue < maxValue) {
+      progress.value = currentValue + 1;
+      progressStatus.textContent = `${progress.value} / ${progress.max} completed`;
+    }
   }, 2000);
 }
 
@@ -98,6 +109,9 @@ function UncheckSteps(checkbox) {
   const uncheckedIcon = checkbox.querySelector(".unchecked");
   const loadingIcon = checkbox.querySelector(".loader");
   const checkedIcon = checkbox.querySelector(".checked");
+  const progress = document.getElementById("progress");
+  const progressStatus = document.getElementById("progress-status");
+
   checkedIcon.classList.add("hide");
   loadingIcon.classList.remove("hide");
 
@@ -105,6 +119,14 @@ function UncheckSteps(checkbox) {
     loadingIcon.classList.add("hide");
     uncheckedIcon.classList.remove("hide");
     checkbox.classList.remove("marked-as-done");
+
+    const currentValue = parseInt(progress.value);
+    const maxValue = parseInt(progress.max);
+
+    if (currentValue <= maxValue) {
+      progress.value = currentValue - 1 === 0 ? "0.4" : currentValue - 1;
+      progressStatus.textContent = `${parseInt(progress.value)} / ${progress.max} completed`;
+    }
   }, 2000);
 }
 
