@@ -13,10 +13,10 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container bg-white">
       <header>
-        <div class="header">
-          <a href="https://shopify.com" target="_blank" class="icon">
+        <div class="header flex">
+          <a href="https://shopify.com" target="_blank" class="flex-1">
             <img
               src="https://crushingit.tech/hackathon-assets/shopify-icon.svg"
               alt="shopify"
@@ -29,7 +29,7 @@
             />
           </a>
 
-          <button class="search-input flex">
+          <button class="search-input flex flex-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -49,10 +49,11 @@
               name="search"
               id="search"
               placeholder="Search"
+              class="flex-1"
             />
           </button>
 
-          <div class="end flex">
+          <div class="end flex flex-1">
             <div id="alert-container">
               <button
                 aria-haspopup="true"
@@ -127,7 +128,9 @@
                     </button>
                   </div>
                 </div>
-                <p>Alerts about your store and account will show here</p>
+                <p class="bg-white">
+                  Alerts about your store and account will show here
+                </p>
               </div>
             </div>
             <div id="menu-container">
