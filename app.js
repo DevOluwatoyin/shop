@@ -9,9 +9,11 @@ const setupSteps = document.querySelector("#accordion-wrapper");
 const foldSetupSteps = document.querySelector("#close-steps");
 const openSetupSteps = document.querySelector("#open-steps");
 const allSteps = document.querySelectorAll(".accordion-item");
+const HIDE_CLASS = "hide";
+const HIDDEN_CLASS = "hidden";
 
 function OpenAlert() {
-  alert.classList.toggle("hide");
+  alert.classList.toggle(HIDE_CLASS);
   const isExpanded = notification.getAttribute("aria-expanded") === "true";
   const alertFocus = alert.querySelector("#mark-read");
 
@@ -23,7 +25,7 @@ function OpenAlert() {
 }
 
 function OpenMenu() {
-  menuDropdown.classList.toggle("hide");
+  menuDropdown.classList.toggle(HIDE_CLASS);
   const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
 
   const menuItems = menuDropdown.querySelectorAll("[role='menuitem']");
@@ -36,13 +38,13 @@ function OpenMenu() {
 }
 
 function DismissTrialCallout() {
-  trialCallout.classList.add("hide");
+  trialCallout.classList.add(HIDE_CLASS);
 }
 
 function OpenSetupGuide() {
-  openSetupSteps.classList.toggle("hide");
-  setupSteps.classList.toggle("hide");
-  foldSetupSteps.classList.toggle("hide");
+  openSetupSteps.classList.toggle(HIDE_CLASS);
+  setupSteps.classList.toggle(HIDE_CLASS);
+  foldSetupSteps.classList.toggle(HIDE_CLASS);
 }
 
 function OpenAndCloseSetupStep() {
@@ -52,7 +54,7 @@ function OpenAndCloseSetupStep() {
     const checkbox = item.querySelector(".checkbox");
 
     if (index === 0) {
-      item.classList.remove("hidden");
+      item.classList.remove(HIDDEN_CLASS);
       content.setAttribute("aria-hidden", "false");
     }
 
@@ -63,17 +65,17 @@ function OpenAndCloseSetupStep() {
     });
 
     control.addEventListener("click", function () {
-      const isOpen = item.classList.contains("hidden");
+      const isOpen = item.classList.contains(HIDDEN_CLASS);
 
       allSteps.forEach((otherItem) => {
-        otherItem.classList.add("hidden");
+        otherItem.classList.add(HIDDEN_CLASS);
         otherItem
           .querySelector(".desc-texts")
           .setAttribute("aria-hidden", "true");
       });
 
       if (isOpen) {
-        item.classList.remove("hidden");
+        item.classList.remove(HIDDEN_CLASS);
         content.setAttribute("aria-hidden", "false");
       }
     });
@@ -87,12 +89,12 @@ function CheckSteps(checkbox) {
   const progress = document.getElementById("progress");
   const progressStatus = document.getElementById("progress-status");
 
-  loadingIcon.classList.remove("hide");
-  uncheckedIcon.classList.add("hide");
+  loadingIcon.classList.remove(HIDE_CLASS);
+  uncheckedIcon.classList.add(HIDE_CLASS);
 
   setTimeout(() => {
-    loadingIcon.classList.add("hide");
-    checkedIcon.classList.remove("hide");
+    loadingIcon.classList.add(HIDE_CLASS);
+    checkedIcon.classList.remove(HIDE_CLASS);
     checkbox.classList.add("marked-as-done");
 
     const currentValue = parseInt(progress.value);
@@ -112,12 +114,12 @@ function UncheckSteps(checkbox) {
   const progress = document.getElementById("progress");
   const progressStatus = document.getElementById("progress-status");
 
-  checkedIcon.classList.add("hide");
-  loadingIcon.classList.remove("hide");
+  checkedIcon.classList.add(HIDE_CLASS);
+  loadingIcon.classList.remove(HIDE_CLASS);
 
   setTimeout(() => {
-    loadingIcon.classList.add("hide");
-    uncheckedIcon.classList.remove("hide");
+    loadingIcon.classList.add(HIDE_CLASS);
+    uncheckedIcon.classList.remove(HIDE_CLASS);
     checkbox.classList.remove("marked-as-done");
 
     const currentValue = parseInt(progress.value);
@@ -125,7 +127,9 @@ function UncheckSteps(checkbox) {
 
     if (currentValue <= maxValue) {
       progress.value = currentValue - 1 === 0 ? "0.4" : currentValue - 1;
-      progressStatus.textContent = `${parseInt(progress.value)} / ${progress.max} completed`;
+      progressStatus.textContent = `${parseInt(progress.value)} / ${
+        progress.max
+      } completed`;
     }
   }, 2000);
 }
