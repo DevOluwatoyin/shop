@@ -16,20 +16,22 @@
     <div class="container bg-white">
       <header>
         <div class="header flex">
-          <a href="https://shopify.com" target="_blank" class="flex-1">
-            <img
-              src="https://crushingit.tech/hackathon-assets/shopify-icon.svg"
-              alt="shopify"
-              class="mobile-logo"
-            />
-            <img
-              src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
-              alt="shopify"
-              class="desktop-logo"
-            />
-          </a>
+          <div class="flex-1">
+            <a href="https://shopify.com" target="_blank">
+              <img
+                src="https://crushingit.tech/hackathon-assets/shopify-icon.svg"
+                alt="shopify"
+                class="mobile-logo"
+              />
+              <img
+                src="https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg"
+                alt="shopify"
+                class="desktop-logo"
+              />
+            </a>
+          </div>
 
-          <button class="search-input flex flex-1">
+          <button aria-label="search" class="search-input flex flex-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -56,6 +58,7 @@
           <div class="end flex flex-1">
             <div id="alert-container">
               <button
+                aria-label="alert-icon"
                 aria-haspopup="true"
                 aria-expanded="false"
                 aria-controls="notify"
@@ -106,7 +109,7 @@
                         fill="#616161"
                       />
                     </svg>
-                    <button id="mark-read">
+                    <button aria-label="mark-alert-as-read" id="mark-read">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -135,6 +138,7 @@
             </div>
             <div id="menu-container">
               <button
+                aria-label="profile-icon"
                 aria-haspopup="true"
                 aria-expanded="false"
                 aria-controls="menu-dropdown"
@@ -269,13 +273,13 @@
                 >Extend your trial for $1/month for 3 months on select
                 plans.</span
               >
-              <button>
+              <button aria-label="select a plan">
                 <a href="https://shopify.com/pricing" target="_blank"
                   >Select a plan</a
                 >
               </button>
             </p>
-            <button id="dismiss">
+            <button aria-label="dismiss notification" id="dismiss">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -305,7 +309,7 @@
                   <progress id="progress" value="0.4" max="5">0</progress>
                 </div>
               </div>
-              <button id="toggle-guides">
+              <button aria-label="Toggle setup guides" id="toggle-guides">
                 <svg
                   id="close-steps"
                   class="show hide"
@@ -348,7 +352,10 @@
               <li class="sub-section-wrapper">
                 <div class="sub-section flex accordion-item">
                   <div class="desc flex w-full">
-                    <button class="checkbox">
+                    <button
+                      aria-label="mark as done or undone"
+                      class="checkbox"
+                    >
                       <svg
                         class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
@@ -401,6 +408,7 @@
                     </button>
                     <div class="desc-texts flex w-full">
                       <button
+                        aria-label="mark as done or undone"
                         aria-controls="content-1"
                         aria-expanded="true"
                         id="accordion-control-1"
@@ -412,7 +420,9 @@
                         Choose a theme and add your logo, colors, and images to
                         reflect your brand. <a href="/">Learn more</a>
                       </p>
-                      <button class="btn1">Customize theme</button>
+                      <button aria-label="customize theme" class="btn1">
+                        Customize theme
+                      </button>
                     </div>
                   </div>
                   <div class="desc-img hide">
@@ -427,7 +437,10 @@
               <li class="sub-section-wrapper">
                 <div class="sub-section flex accordion-item hidden">
                   <div class="desc flex w-full">
-                    <button class="checkbox">
+                    <button
+                      aria-label="mark as done or undone"
+                      class="checkbox"
+                    >
                       <svg
                         class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
@@ -480,6 +493,7 @@
                     </button>
                     <div class="desc-texts flex w-full">
                       <button
+                        aria-label="mark as done or undone"
                         aria-controls="content-2"
                         aria-expanded="false"
                         id="accordion-control-2"
@@ -492,8 +506,12 @@
                         products you plan to sell. <a href="/">Learn more</a>
                       </p>
                       <div class="btns flex">
-                        <button class="btn1">Add product</button>
-                        <button class="btn2">Import product</button>
+                        <button aria-label="add product" class="btn1">
+                          Add product
+                        </button>
+                        <button aria-label="import product" class="btn2">
+                          Import product
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -509,7 +527,10 @@
               <li class="sub-section-wrapper">
                 <div class="sub-section flex accordion-item hidden">
                   <div class="desc flex w-full">
-                    <button class="checkbox">
+                    <button
+                      aria-label="mark as done or undone"
+                      class="checkbox"
+                    >
                       <svg
                         class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
@@ -562,6 +583,7 @@
                     </button>
                     <div class="desc-texts flex w-full">
                       <button
+                        aria-label="mark as done or undone"
                         aria-controls="content-3"
                         aria-expanded="false"
                         id="accordion-control-3"
@@ -576,7 +598,7 @@
                         <a href="/">Learn more</a>
                       </p>
 
-                      <button class="btn1">Add domain</button>
+                      <button aria-label="add domain" class="btn1">Add domain</button>
                     </div>
                   </div>
                   <div class="desc-img hide">
@@ -591,7 +613,7 @@
               <li class="sub-section-wrapper">
                 <div class="sub-section flex accordion-item hidden">
                   <div class="desc flex w-full">
-                    <button class="checkbox">
+                    <button aria-label="mark as done or undone" class="checkbox">
                       <svg
                         class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
@@ -644,6 +666,7 @@
                     </button>
                     <div class="desc-texts flex w-full">
                       <button
+                      aria-label="mark as done or undone"
                         aria-controls="content-4"
                         aria-expanded="false"
                         id="accordion-control-4"
@@ -657,7 +680,7 @@
                         your online store.
                         <a href="/">Learn more</a>
                       </p>
-                      <button class="btn1">Name store</button>
+                      <button aria-label="name store" class="btn1">Name store</button>
                     </div>
                   </div>
                   <div class="desc-img hide">
@@ -672,7 +695,7 @@
               <li class="sub-section-wrapper">
                 <div class="sub-section flex accordion-item hidden">
                   <div class="desc flex w-full">
-                    <button class="checkbox">
+                    <button aria-label="mark as done or undone" class="checkbox">
                       <svg
                         class="unchecked"
                         xmlns="http://www.w3.org/2000/svg"
@@ -725,6 +748,7 @@
                     </button>
                     <div class="desc-texts flex w-full">
                       <button
+                      aria-label="mark as done or undone"
                         aria-controls="content-5"
                         aria-expanded="false"
                         id="accordion-control-5"
@@ -738,7 +762,7 @@
                         provider and set it up with your Shopify store.
                         <a href="/">Learn more</a>
                       </p>
-                      <button class="btn1">Set up payment</button>
+                      <button aria-label="setup payment" class="btn1">Set up payment</button>
                     </div>
                   </div>
                   <div class="desc-img hide">

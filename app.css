@@ -86,7 +86,7 @@ header {
 }
 
 .search-input:active,
-.search-input:focus-visible {
+.search-input:focus-within {
   outline: 2px solid #fff;
   outline-offset: 4px;
 }
