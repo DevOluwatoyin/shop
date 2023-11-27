@@ -89,7 +89,7 @@ function OpenAndCloseSetupStep() {
         : CheckSteps(checkbox);
     });
 
-    control.addEventListener("click", function () {
+    checkbox.addEventListener("click", function () {
       const isOpen = item.classList.contains(HIDDEN_CLASS);
 
       allSteps.forEach((otherItem) => {
@@ -129,7 +129,7 @@ function CheckSteps(checkbox) {
       progress.value = currentValue + 1;
       progressStatus.textContent = `${progress.value} / ${progress.max} completed`;
     }
-  }, 2000);
+  }, 1000);
 }
 
 function UncheckSteps(checkbox) {
@@ -156,7 +156,7 @@ function UncheckSteps(checkbox) {
         progress.max
       } completed`;
     }
-  }, 2000);
+  }, 1000);
 }
 
 function togglePopup() {
