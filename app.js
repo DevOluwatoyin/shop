@@ -23,19 +23,29 @@ function OpenAlert() {
 
   alertFocus.focus();
 
-  document.addEventListener("click", closeAlert);
+  document.addEventListener("click", CloseAlert);
 }
 
-function closeAlert(event) {
+function CloseAlert(event) {
   const alertContainer = document.querySelector("#alert-container");
 
   if (!alertContainer.contains(event.target)) {
-    alert.classList.add(HIDE_CLASS);
-
-    notification.setAttribute("aria-expanded", "false");
-    document.removeEventListener("click", closeAlert);
+    CloseAlertDropdown();
   }
 }
+
+function CloseAlertDropdown() {
+  alert.classList.add(HIDE_CLASS);
+  notification.setAttribute("aria-expanded", "false");
+  document.removeEventListener("click", CloseAlert);
+}
+
+document.addEventListener("keydown", function (event) {
+  const isEscapeKey = event.key === "Escape";
+  if (isEscapeKey) {
+    CloseAlertDropdown();
+  }
+});
 
 function OpenMenu() {
   menuDropdown.classList.toggle(HIDE_CLASS);
