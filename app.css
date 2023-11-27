@@ -29,6 +29,10 @@ li {
   list-style: none;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -354,6 +358,7 @@ progress::-webkit-progress-value {
   outline: 2px solid #005bd3;
   outline-offset: 3px;
 }
+
 .sub-section-wrapper {
   padding: 2px 0;
   cursor: pointer;
@@ -363,14 +368,11 @@ progress::-webkit-progress-value {
   border-radius: 10px;
   background: #f3f3f3;
   padding: 8px 8px 12px 8px;
+  transition: all 0.5s ease-in;
 }
 
 .sub-section:hover {
   background-color: #f3f3f3;
-}
-
-.w-full {
-  width: 100%;
 }
 
 .desc {
@@ -394,10 +396,8 @@ progress::-webkit-progress-value {
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  100% {
-    transform: rotate(1turn);
-  }
+.desc > button .checked {
+  animation: zoom-in-rotate 0.3s linear;
 }
 
 .desc-texts {
@@ -488,17 +488,35 @@ progress::-webkit-progress-value {
   outline-offset: 4px;
 }
 
+@keyframes spin {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes zoom-in-rotate {
+  from {
+    transform: rotate(270deg);
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+
 @media screen and (min-width: 991px) {
   .flex-1 {
     flex: 1 0 0;
   }
 
-  header {
+  .header {
     justify-content: space-between;
     padding: 0 10px;
   }
 
-  header .mobile-logo {
+  .header .mobile-logo {
     display: none;
   }
 
