@@ -22,6 +22,19 @@ function OpenAlert() {
     : notification.setAttribute("aria-expanded", "true");
 
   alertFocus.focus();
+
+  document.addEventListener("click", closeAlert);
+}
+
+function closeAlert(event) {
+  const alertContainer = document.querySelector("#alert-container");
+
+  if (!alertContainer.contains(event.target)) {
+    alert.classList.add(HIDE_CLASS);
+
+    notification.setAttribute("aria-expanded", "false");
+    document.removeEventListener("click", closeAlert);
+  }
 }
 
 function OpenMenu() {
@@ -35,6 +48,18 @@ function OpenMenu() {
   isExpanded
     ? menuButton.setAttribute("aria-expanded", "false")
     : menuButton.setAttribute("aria-expanded", "true");
+
+  document.addEventListener("click", closeMenu);
+}
+
+function closeMenu(event) {
+  const menuContainer = document.querySelector("#menu-container");
+
+  if (!menuContainer.contains(event.target)) {
+    menuDropdown.classList.add(HIDE_CLASS);
+    menuButton.setAttribute("aria-expanded", "false");
+    document.removeEventListener("click", closeMenu);
+  }
 }
 
 function DismissTrialCallout() {
